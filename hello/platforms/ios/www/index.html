@@ -101,6 +101,8 @@
 
 <li>
     <div class="item-content">
+
+
         <div class="item-media">
             <i class="icon my-icon"></i>
         </div>
@@ -110,7 +112,7 @@
 
             </div>
             <div class="item-after">
-              <a href="about.html" class="button active">view</a>
+              <a href="about.html" data-id="{{id}}" class="button active">view</a>
             </div>
         </div>
     </div>
@@ -177,7 +179,8 @@ $$('.popup .color').on('click', function () {
 
 
 $$('button').on('click', function () {
-console.log('TEST')
+    var id = $$(this).data('id');
+console.log('TEST ',id)
 
 
 });
