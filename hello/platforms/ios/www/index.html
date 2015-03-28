@@ -306,6 +306,13 @@ var api = {
 
 var apiRequest = function(url,params,requestType){
         
+
+
+
+
+
+
+        return
         var _self = this;
         
         url = 'https://sandbox.api.gnsvc.com/'+url;
@@ -376,7 +383,24 @@ var apiRequest = function(url,params,requestType){
         apiRequest(url,{},'get');
     }
 
-    getTeeTimesByGeo();
+
+setTimeout(function(){
+    console.log('NOW')
+    var httpReq = new plugin.HttpRequest();
+httpReq.get("https://samplechat.firebaseio-demo.com/users/jack/name.json", function(status, data) {
+  console.log(status)
+  console.log(data)
+});
+
+},1000)
+
+
+
+
+
+
+
+//    getTeeTimesByGeo();
 
         </script>
     </body>

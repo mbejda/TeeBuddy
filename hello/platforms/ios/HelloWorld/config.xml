@@ -37,10 +37,13 @@
     <feature name="File">
         <param name="ios-package" value="CDVFile" />
     </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
     <feature name="CordovaHttpPlugin">
         <param name="ios-package" value="CordovaHttpPlugin" />
     </feature>
-    <feature name="Geolocation">
-        <param name="ios-package" value="CDVLocation" />
+    <feature name="HttpRequest">
+        <param name="ios-package" value="HttpRequest" />
     </feature>
 </widget>
