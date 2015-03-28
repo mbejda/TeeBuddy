@@ -22,13 +22,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/com.synconset.cordovaHTTP/www/cordovaHTTP.js",
-        "id": "com.synconset.cordovaHTTP.CordovaHttpPlugin",
-        "clobbers": [
-            "plugins.CordovaHttpPlugin"
-        ]
-    },
-    {
         "file": "plugins/org.apache.cordova.geolocation/www/Coordinates.js",
         "id": "org.apache.cordova.geolocation.Coordinates",
         "clobbers": [
@@ -54,6 +47,13 @@ module.exports = [
         "id": "org.apache.cordova.geolocation.geolocation",
         "clobbers": [
             "navigator.geolocation"
+        ]
+    },
+    {
+        "file": "plugins/com.synconset.cordovaHTTP/www/cordovaHTTP.js",
+        "id": "com.synconset.cordovaHTTP.CordovaHttpPlugin",
+        "clobbers": [
+            "plugins.CordovaHttpPlugin"
         ]
     },
     {
@@ -191,8 +191,8 @@ module.exports.metadata =
 {
     "com.radiusnetworks.cordova.proximitykit": "0.5.1",
     "org.apache.cordova.console": "0.2.13",
-    "com.synconset.cordovaHTTP": "0.1.4",
     "org.apache.cordova.geolocation": "0.3.12",
+    "com.synconset.cordovaHTTP": "0.1.4",
     "org.apache.cordova.file": "0.2.5"
 }
 // BOTTOM OF METADATA

@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02A59B62B5A24781B43A3244 /* CordovaHttpPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = B0603424D8CA4832B5265CA3 /* CordovaHttpPlugin.m */; };
 		0776775C1AC6ED1E004769BF /* ProximityKit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0776775B1AC6ED1E004769BF /* ProximityKit.plist */; };
 		0776775E1AC6EDA4004769BF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0776775D1AC6EDA4004769BF /* libsqlite3.dylib */; };
-		1ADF6A8C74624DBFA8346CD6 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 726C825BA88142618CDECE3B /* AFURLResponseSerialization.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
@@ -33,15 +31,10 @@
 		30B4F30219D5E07200D9F7D8 /* Default-Landscape-736h.png in Resources */ = {isa = PBXBuildFile; fileRef = 30B4F2FF19D5E07200D9F7D8 /* Default-Landscape-736h.png */; };
 		30C1856619D5FC0A00212699 /* icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30C1856519D5FC0A00212699 /* icon-60@3x.png */; };
 		30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FC414816E50CA1004E6F35 /* icon-72@2x.png */; };
-		377E9D616F5D4A7D892E2EB2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169A22D34E054F26945CC54F /* SystemConfiguration.framework */; };
-		38BB8F86B8054DA8B6A34173 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B8D641CD34A22A975ACE5 /* AFURLSessionManager.m */; };
 		42CA4B4A41504512A3B6843B /* RPKCDVPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB07A3D8F940428CCBBE72 /* RPKCDVPlugin.m */; };
-		45746D6FECE44724BB340243 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C580CB489AF4141BE11BF6F /* AFURLRequestSerialization.m */; };
-		5948BB544FB5478DAF102578 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28741CA753644DA69DA5D2B7 /* Security.framework */; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
 		64A71693B09B4298BEC0F1DD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635769A5F0A94300B34C16E7 /* CoreLocation.framework */; };
 		664441D8A5D04F8EA4C09618 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FC11838018E144DCB77223DC /* CDVLogger.m */; };
-		73ED7A5ECF3541F091FF984D /* TextResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1996E43484694C578EF83049 /* TextResponseSerializer.m */; };
 		773CA1BCC238436A9BE49D96 /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A68D520B924E1590BCB8AC /* CDVLocation.m */; };
 		7E7966DE1810823500FA85AD /* icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D41810823500FA85AD /* icon-40.png */; };
 		7E7966DF1810823500FA85AD /* icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D51810823500FA85AD /* icon-40@2x.png */; };
@@ -53,15 +46,7 @@
 		7E7966E51810823500FA85AD /* icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DB1810823500FA85AD /* icon-76@2x.png */; };
 		7E7966E61810823500FA85AD /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DC1810823500FA85AD /* icon-small.png */; };
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
-		8EB1903DB3C441B6A962197D /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB829B02D32B4C8CB246B9DD /* AFHTTPRequestOperationManager.m */; };
-		A0C30FEC8E3B4639813C4329 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8682813927D9408DAD1D17DE /* AFURLConnectionOperation.m */; };
-		B4C4D897EC44496C86A8E14E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DFBA1AC4F044EDA49AD9AE /* AFHTTPRequestOperation.m */; };
-		BFBBAB8F5DD44994A55BBBE7 /* CDVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4A54D8A334DBF8E127C27 /* CDVFile.m */; };
-		C4A1AD9AB80E4A59906C8ACA /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C85EB4209A6E4591BF233C23 /* AFHTTPSessionManager.m */; };
-		CE5988D10FAE4E2DAF26B23D /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEF6F68967543E99AB93456 /* HTTPManager.m */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
-		D9DAEC8E041C440F958CE470 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96988C4E449F4B8C97B969A2 /* AFNetworkReachabilityManager.m */; };
-		F5E396B1120C4E43A134720F /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B374709934DA2AAB44AD8 /* AFSecurityPolicy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,7 +143,6 @@
 		DD9B8D641CD34A22A975ACE5 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = com.synconset.cordovaHTTP/AFURLSessionManager.m; sourceTree = "<group>"; };
 		DEEF6F68967543E99AB93456 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPManager.m; path = com.synconset.cordovaHTTP/HTTPManager.m; sourceTree = "<group>"; };
 		E2FC74D9C6FB4271B11C91C8 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = com.synconset.cordovaHTTP/AFNetworking.h; sourceTree = "<group>"; };
-		EB87FDF21871DA7A0020F90C /* merges */ = {isa = PBXFileReference; lastKnownFileType = folder; name = merges; path = ../../merges; sourceTree = "<group>"; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = HelloWorld/config.xml; sourceTree = "<group>"; };
@@ -177,8 +161,6 @@
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
 				2B2450BD8E1A41788D8FE4E8 /* ProximityKit.framework in Frameworks */,
-				5948BB544FB5478DAF102578 /* Security.framework in Frameworks */,
-				377E9D616F5D4A7D892E2EB2 /* SystemConfiguration.framework in Frameworks */,
 				64A71693B09B4298BEC0F1DD /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,7 +195,6 @@
 				0776775B1AC6ED1E004769BF /* ProximityKit.plist */,
 				EB87FDF41871DAF40020F90C /* config.xml */,
 				EB87FDF31871DA8E0020F90C /* www */,
-				EB87FDF21871DA7A0020F90C /* merges */,
 				EB87FDF11871DA420020F90C /* Staging */,
 				301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -493,19 +474,6 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				42CA4B4A41504512A3B6843B /* RPKCDVPlugin.m in Sources */,
 				664441D8A5D04F8EA4C09618 /* CDVLogger.m in Sources */,
-				BFBBAB8F5DD44994A55BBBE7 /* CDVFile.m in Sources */,
-				02A59B62B5A24781B43A3244 /* CordovaHttpPlugin.m in Sources */,
-				CE5988D10FAE4E2DAF26B23D /* HTTPManager.m in Sources */,
-				73ED7A5ECF3541F091FF984D /* TextResponseSerializer.m in Sources */,
-				B4C4D897EC44496C86A8E14E /* AFHTTPRequestOperation.m in Sources */,
-				8EB1903DB3C441B6A962197D /* AFHTTPRequestOperationManager.m in Sources */,
-				C4A1AD9AB80E4A59906C8ACA /* AFHTTPSessionManager.m in Sources */,
-				D9DAEC8E041C440F958CE470 /* AFNetworkReachabilityManager.m in Sources */,
-				F5E396B1120C4E43A134720F /* AFSecurityPolicy.m in Sources */,
-				A0C30FEC8E3B4639813C4329 /* AFURLConnectionOperation.m in Sources */,
-				45746D6FECE44724BB340243 /* AFURLRequestSerialization.m in Sources */,
-				1ADF6A8C74624DBFA8346CD6 /* AFURLResponseSerialization.m in Sources */,
-				38BB8F86B8054DA8B6A34173 /* AFURLSessionManager.m in Sources */,
 				773CA1BCC238436A9BE49D96 /* CDVLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

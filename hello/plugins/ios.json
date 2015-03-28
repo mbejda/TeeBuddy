@@ -17,15 +17,15 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"File\"><param name=\"ios-package\" value=\"CDVFile\" /></feature>",
                             "count": 1
                         },
                         {
                             "xml": "<feature name=\"CordovaHttpPlugin\"><param name=\"ios-package\" value=\"CordovaHttpPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -84,10 +84,10 @@
         "org.apache.cordova.console": {
             "PACKAGE_NAME": "com.example.hello"
         },
-        "com.synconset.cordovaHTTP": {
+        "org.apache.cordova.geolocation": {
             "PACKAGE_NAME": "com.example.hello"
         },
-        "org.apache.cordova.geolocation": {
+        "com.synconset.cordovaHTTP": {
             "PACKAGE_NAME": "com.example.hello"
         }
     },
