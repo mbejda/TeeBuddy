@@ -112,7 +112,7 @@
 
             </div>
             <div class="item-after">
-              <a href="about.html" data-id="{{id}}" class="button active">view</a>
+              <a href="tee.html?id={{id}}" data-page="tee" class="button active">view</a>
             </div>
         </div>
     </div>
@@ -178,12 +178,6 @@ $$('.popup .color').on('click', function () {
 });
 
 
-$$('button').on('click', function () {
-    var id = $$(this).data('id');
-console.log('TEST ',id)
-
-
-});
 
 
 
@@ -293,6 +287,18 @@ window.addEventListener('load', function (e) {
         }
     }, false);
 }, false);
+
+
+
+myApp.onPageInit('tee', function (page) {
+  
+    var id = page.query.id;
+  console.log('facility ID ',page);
+
+  // "page" variable contains all required information about loaded and initialized page 
+})
+ 
+
 
 
 
