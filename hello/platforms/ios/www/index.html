@@ -299,7 +299,10 @@ myApp.onPageInit('tee', function (page) {
 })
  
 
-
+var api = {
+    user:'Hackathon_Development',
+    pass:'6YBkHF86ut7946pDwZhp'
+}
 
 var apiRequest = function(url,params,requestType){
         
@@ -310,8 +313,8 @@ var apiRequest = function(url,params,requestType){
         requestType = (undefined === requestType) ? 'post' : requestType;
         
         var headers = {
-            'UserName': _self.api.user,
-            'Password': _self.api.pass,
+            'UserName': api.user,
+            'Password': api.pass,
             'Accept-Encoding': 'gzip, deflate',
         }
         
