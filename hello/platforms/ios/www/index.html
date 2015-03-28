@@ -301,10 +301,78 @@ myApp.onPageInit('tee', function (page) {
 
 
 
+var apiRequest = function(url,params,requestType){
+        
+        var _self = this;
+        
+        url = 'https://sandbox.api.gnsvc.com/'+url;
+        params = (undefined === params) ? {} : params;
+        requestType = (undefined === requestType) ? 'post' : requestType;
+        
+        var headers = {
+            'UserName': _self.api.user,
+            'Password': _self.api.pass,
+            'Accept-Encoding': 'gzip, deflate',
+        }
+        
+        switch(requestType){
+            
+            case 'post':
+            
+                cordovaHTTP.post(url, params, headers, function(response) { //success
+                    // prints 200
+                    console.log('status: '+response.status);
+                    console.log(response);
+                    /*
+                    try {
+                        response.data = JSON.parse(response.data);
+                        // prints test
+                        console.log(response.data);
+                    } catch(e) {
+                        console.error("JSON parsing error");
+                    }
+                    */
+                }, function(response) { //failure
+                    // prints 403
+                    console.log('error status: '+response.status);
+                         
+                    //prints Permission denied
+                    console.log('erroe msg: '+response.error);
+                });
+
+                break;
+            
+            case 'get':
+            
+                cordovaHTTP.get(url,params,headers, function(response) {
+                
+                    console.log(response);
+                
+                }, function(response) {
+                
+                    console.error(response);
+                
+                });
+                
+                break;
+        }
+        
+        
+
+    }
 
 
-
-
+    var getTeeTimesByGeo = function(){
+        
+        var lat = '34.0204989';
+        var long = '-118.4117325';
+        var proximity = '10';
+        
+        var url = 'channel/11329/facilities?q=geo-location&latitude='+lat+'&longitude='+long+'&proximity='+proximity+
+        '&expand=FacilityDetail.Ratesets';
+        
+        apiRequest(url,{},'get');
+    }
 
         </script>
     </body>
