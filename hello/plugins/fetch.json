@@ -1,0 +1,23 @@
+{
+    "com.synconset.cordovaHTTP": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/wymsee/cordova-HTTP.git",
+            "subdir": "."
+        }
+    },
+    "org.apache.cordova.file": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/apache/cordova-plugin-file",
+            "subdir": ".",
+            "ref": "r0.2.5"
+        }
+    },
+    "org.apache.cordova.geolocation": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.geolocation"
+        }
+    }
+}
