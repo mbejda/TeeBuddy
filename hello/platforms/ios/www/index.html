@@ -371,11 +371,12 @@ var apiRequest = function(url,params,requestType){
         var long = '-118.4117325';
         var proximity = '10';
         
-        var url = 'channel/11329/facilities?q=geo-location&latitude='+lat+'&longitude='+long+'&proximity='+proximity+
-        '&expand=FacilityDetail.Ratesets';
+        var url = 'channel/11329/facilities?q=geo-location&latitude='+lat+'&longitude='+long+'&proximity='+proximity+'&expand=FacilityDetail.Ratesets';
         
         apiRequest(url,{},'get');
     }
+
+    getTeeTimesByGeo();
 
         </script>
     </body>
