@@ -360,7 +360,7 @@ $$('.external-link').on('click',function(){
     var targetURL = $$(this).attr('href');
     console.log('targetURL',targetURL);
     //window.open(targetURL,'_system');
-    var ref = window.open(encodeURI(targetURL), '_blank', 'location=yes');
+    var ref = window.open(encodeURI(targetURL), '_system', 'location=yes');
     
 });
 $$('.tee-times .datetime').each(function(index,value){
