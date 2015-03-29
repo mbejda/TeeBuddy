@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		0776775C1AC6ED1E004769BF /* ProximityKit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0776775B1AC6ED1E004769BF /* ProximityKit.plist */; };
 		0776775E1AC6EDA4004769BF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0776775D1AC6EDA4004769BF /* libsqlite3.dylib */; };
@@ -33,9 +32,7 @@
 		30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FC414816E50CA1004E6F35 /* icon-72@2x.png */; };
 		42CA4B4A41504512A3B6843B /* RPKCDVPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB07A3D8F940428CCBBE72 /* RPKCDVPlugin.m */; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
-		64A71693B09B4298BEC0F1DD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635769A5F0A94300B34C16E7 /* CoreLocation.framework */; };
 		664441D8A5D04F8EA4C09618 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FC11838018E144DCB77223DC /* CDVLogger.m */; };
-		773CA1BCC238436A9BE49D96 /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A68D520B924E1590BCB8AC /* CDVLocation.m */; };
 		7E7966DE1810823500FA85AD /* icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D41810823500FA85AD /* icon-40.png */; };
 		7E7966DF1810823500FA85AD /* icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D51810823500FA85AD /* icon-40@2x.png */; };
 		7E7966E01810823500FA85AD /* icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D61810823500FA85AD /* icon-50.png */; };
@@ -161,7 +158,6 @@
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
 				2B2450BD8E1A41788D8FE4E8 /* ProximityKit.framework in Frameworks */,
-				64A71693B09B4298BEC0F1DD /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +470,6 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				42CA4B4A41504512A3B6843B /* RPKCDVPlugin.m in Sources */,
 				664441D8A5D04F8EA4C09618 /* CDVLogger.m in Sources */,
-				773CA1BCC238436A9BE49D96 /* CDVLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

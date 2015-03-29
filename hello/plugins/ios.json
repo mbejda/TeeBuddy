@@ -17,10 +17,6 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"File\"><param name=\"ios-package\" value=\"CDVFile\" /></feature>",
                             "count": 1
                         },
@@ -67,12 +63,7 @@
             },
             "*-Info.plist": {
                 "parents": {
-                    "NSLocationWhenInUseUsageDescription": [
-                        {
-                            "xml": "<string />",
-                            "count": 1
-                        }
-                    ]
+                    "NSLocationWhenInUseUsageDescription": []
                 }
             }
         }
@@ -82,9 +73,6 @@
             "PACKAGE_NAME": "com.example.hello"
         },
         "org.apache.cordova.console": {
-            "PACKAGE_NAME": "com.example.hello"
-        },
-        "org.apache.cordova.geolocation": {
             "PACKAGE_NAME": "com.example.hello"
         },
         "com.synconset.cordovaHTTP": {
