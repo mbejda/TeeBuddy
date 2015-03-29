@@ -2,11 +2,14 @@
 .facilities-list, .facilities-list .list-block{margin:0!important;}
 .facilities-list .item-subtitle {
 	font-size: 13px!important;
+	/*
 	-webkit-border-radius:50%;
 	border-radius:50%;
 	background:#83d88b;
 	width:20px;
 	text-align: center;
 	color:#fff!important;
+	*/
+	color:#777!important;
 }
 .small{font-size:0.65em!important;line-height:0.75em!important;}
