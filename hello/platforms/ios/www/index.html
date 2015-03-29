@@ -413,7 +413,7 @@ $$('.popup-purchase').on('click', function () {
                         '<div align="right" class="col-50">'+
                             '<h3 style="margin:0;">$'+display_price+'</h3>'+
                             '<p>per player</p>'+
-                            '<a href="#" class="button button-big active">Add to Cart</a>'+
+                            '<a id="add-to-cart" href="#" class="button button-big active">Purchase</a>'+
                         '</div>'+
                         //'</form>'+
                     '</div> '+
@@ -443,6 +443,12 @@ $$('.popup-purchase').on('click', function () {
         }
        
     });  
+
+    $$('#add-to-cart').on('click',function(){
+
+        myApp.alert('Purchased!', 'Tee Buddy');
+
+    });
 
 });
  
@@ -494,9 +500,9 @@ var apiRequest = function(url,params,requestType,callback){
 
     var getTeeTimesByGeo = function(){
         
-        var lat = '34.0204989';
-        var long = '-118.4117325';
-        var proximity = '10';
+        var lat = '28.4815057'//'34.0204989';
+        var long = '-81.4601184'//'-118.4117325';
+        var proximity = '50';
         
         var url = 'https://sandbox.api.gnsvc.com/rest/channel/11329/facilities?q=geo-location&latitude='+lat+'&longitude='+long+'&proximity='+proximity+'&expand=FacilityDetail.Ratesets';
     
