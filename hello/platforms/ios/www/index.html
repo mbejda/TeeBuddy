@@ -57,12 +57,12 @@
                 <div class="toolbar tabbar tabbar-labels">
             <div class="toolbar-inner">
                 <a href="index.html" class="tab-link active">
-                    <i class="icon ios7-chatbubble-outline"></i>
+                    <i class="icon ion-flag"></i>
                     <span class="tabbar-label i18n" data-i18n="index.contacts">Courses</span>
                 </a>
 
                 <a href="settings.html" class="tab-link">
-                    <i class="icon ios7-gear-outline">
+                    <i class="icon ion-ios-gear">
                         <!-- <span class="badge badge-red">4</span> -->
                     </i>
                     <span class="tabbar-label i18n" data-i18n="index.setting">Settings</span>
@@ -155,7 +155,7 @@
             <h3>Tee Times Ending Soon!</h3>
             <ul>{{#each this}}
                 <li>
-                    <a href="#" class="item-link item-content external">
+                    <a href="{{DisplayRate.TeeTimeRateID}}" class="popup-purchase item-link item-content external">
                         <div class="item-media"><i class="icon ion-ios-clock-outline"></i></div>
                         <div class="item-inner">
                             <div class="item-title datetime">{{Time}}</div>
@@ -284,6 +284,10 @@ window.addEventListener('load', function (e) {
 
 var facilities = {};
 
+var facility = {};
+
+var teeTimesData = {}
+
 myApp.onPageInit('tee-times', function (page) {
   
     var id = page.query.id;
@@ -293,12 +297,12 @@ myApp.onPageInit('tee-times', function (page) {
     for(key in facilities){
         //get facility clicked
         if(id == facilities[key].ID){
-            var facility = facilities[key];
+            facility = facilities[key];
     
             console.log('you clicked this facility',facility);
              //console.log('PAGE TEMPLATE DATA:');
             // console.log(myApp.template7Data['url:tee-times.html']);
-             var teeTimesData = facility.Ratesets.Value;
+             teeTimesData = facility.Ratesets.Value;
              console.log('teeTimesData:',teeTimesData);
 
              /*
@@ -340,6 +344,8 @@ myApp.onPageInit('tee-times', function (page) {
                     console.log('tracker result',result);
                 }
             );
+
+
             
             
             break;
@@ -352,23 +358,74 @@ $$('.external-link').on('click',function(){
     var targetURL = $$(this).attr('href');
     console.log('targetURL',targetURL);
     //window.open(targetURL,'_system');
-    var ref = window.open(encodeURI(targetURL), '_system');
+    var ref = window.open(encodeURI(targetURL), '_blank','location=yes');
     
 });
 $$('.tee-times .datetime').each(function(index,value){
 
     var tee_datetime = $$(this).html();
-//moment(tee_datetime).fromNow(); 
-var a = moment(tee_datetime);
-var b = moment();
-console.log('a',a);
-console.log('b',b);
-console.log('Expires in '+a.diff(b, 'hours')); // 1
-
-$$(this).html(a.format('MMMM D,YYYY hh:mm')+'<br/> <em class="small">Expires in '+a.diff(b, 'hours')+' hour(s)</em>');
+    //moment(tee_datetime).fromNow(); 
+    var a = moment(tee_datetime);
+    var b = moment();
+    /*
+    console.log('a',a);
+    console.log('b',b);
+    console.log('Expires in '+a.diff(b, 'hours')); // 1
+    */
+    $$(this).html(a.format('MMMM D,YYYY hh:mm a')+'<br/> <em class="small">Expires in '+a.diff(b, 'hours')+' hour(s)</em>');
 
 });
 
+
+    $$('.popup-purchase').on('click', function () {
+
+        var _self = this;
+
+        //var purchase_id = $$.data(_self,'purchase-id');
+        var purchase_id = $$(_self).attr('href');
+        console.log('purchase id', purchase_id);
+
+        for(key in teeTimesData){
+            
+            if(purchase_id == teeTimesData[key].DisplayRate.TeeTimeRateID){
+                
+                var due_online = teeTimesData[key].DisplayRate.SinglePlayerPrice.DueOnline;
+                var display_price = due_online.Value+' '+due_online.CurrencyCode;
+                
+                var popupHTML = '<div class="popup">'+
+                '<div class="content-block">'+
+                    '<div class="row">'+
+                        '<!-- Each "cell" has col-[widht in percents] class -->'+
+                        '<form id="form-purchase">'+
+                        '<div align="left" class="col-50">'+
+                            '<h3>'+facility.Name+'</h3>'+
+                            '<h4>'+moment(facility.Time,'MMMM D,YYYY hh:mm a')+'</h4>'+
+                            '<select name="players">'+
+                                '<option value="1">1 player</option>'+
+                                '<option value="2">2 players</option>'+
+                                '<option value="3">3 players</option>'+
+                                '<option value="4" selected="selected">4 players</option>'+
+                            '</select>'+
+                        '</div>'+
+                        '<div align="right" class="col-50">'+
+                            '<h3>'+display_price+'</h3>'+
+                            '<a href="#" class="button button-big">Add to Cart</a>'+
+                        '</div>'+
+                        '</form>'+
+                    '</div> '+
+                  '<p></p>'+
+                  '<p><a href="#" class="close-popup">Close me</a></p>'+
+                '</div>'+
+                '</div>'
+                myApp.popup(popupHTML);
+
+                break;
+            } 
+
+
+        }
+       
+    });  
 
 });
  

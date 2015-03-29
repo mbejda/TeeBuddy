@@ -1,4 +1,5 @@
 .item-title-row > .item-title{font-size:0.75em!important;}
+.facilities-list, .facilities-list .list-block{margin:0!important;}
 .facilities-list .item-subtitle {
 	font-size: 13px!important;
 	-webkit-border-radius:50%;
