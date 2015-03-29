@@ -377,7 +377,7 @@ $$('.tee-times .datetime').each(function(index,value){
 });
 
 
-    $$('.popup-purchase').on('click', function () {
+$$('.popup-purchase').on('click', function () {
 
         var _self = this;
 
@@ -391,15 +391,18 @@ $$('.tee-times .datetime').each(function(index,value){
                 
                 var due_online = teeTimesData[key].DisplayRate.SinglePlayerPrice.DueOnline;
                 var display_price = due_online.Value+' '+due_online.CurrencyCode;
-                
-                var popupHTML = '<div class="popup">'+
+                console.log('teeTimesData ',teeTimesData[key]);
+                var tee_time = moment(teeTimesData[key].Time).format('MMMM D,YYYY hh:mm a');
+
+                var popupHTML = 
+                '<div class="popup">'+
                 '<div class="content-block">'+
                     '<div class="row">'+
                         '<!-- Each "cell" has col-[widht in percents] class -->'+
-                        '<form id="form-purchase">'+
+                        //'<form id="form-purchase">'+
                         '<div align="left" class="col-50">'+
-                            '<h3>'+facility.Name+'</h3>'+
-                            '<h4>'+moment(facility.Time,'MMMM D,YYYY hh:mm a')+'</h4>'+
+                            '<h3 style="margin-top:0;">'+facility.Name+'</h3>'+
+                            '<h4>'+tee_time+'</h4>'+
                             '<select name="players">'+
                                 '<option value="1">1 player</option>'+
                                 '<option value="2">2 players</option>'+
@@ -408,16 +411,30 @@ $$('.tee-times .datetime').each(function(index,value){
                             '</select>'+
                         '</div>'+
                         '<div align="right" class="col-50">'+
-                            '<h3>'+display_price+'</h3>'+
-                            '<a href="#" class="button button-big">Add to Cart</a>'+
+                            '<h3 style="margin:0;">$'+display_price+'</h3>'+
+                            '<p>per player</p>'+
+                            '<a href="#" class="button button-big active">Add to Cart</a>'+
                         '</div>'+
-                        '</form>'+
+                        //'</form>'+
                     '</div> '+
-                  '<p></p>'+
-                  '<p><a href="#" class="close-popup">Close me</a></p>'+
+                    '<p></p>'+
+                    //'<p class="buttons-row">'+
+                        '<a href="#" class="button button-big close-popup">Close</a>'+
+                    //'</p>'+
+                    //'<p><a href="#" class="close-popup">Close me</a></p>'+
                 '</div>'+
                 '</div>'
                 myApp.popup(popupHTML);
+
+                
+                console.log('tee time: ',tee_time);
+
+                apiRequest('http://catz.cloudapp.net:4000/api/tee?name='+tee_time,
+                {},
+                'GET',
+                function(result){
+                    console.log('tracker result',result);
+                })
 
                 break;
             } 
@@ -459,7 +476,7 @@ var apiRequest = function(url,params,requestType,callback){
             method: requestType,
             dataType: 'json',
             success: function(response){
-                //console.log('test response:');
+                console.log('test response:');
                 //console.log(response);
 
                 callback(response);
