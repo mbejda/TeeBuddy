@@ -50,6 +50,10 @@
         <div class="pages">
           <div data-page="index" class="page">
             <div class="page-content">
+                <!-- Default with custom size -->
+      
+       <!-- <span style="width:42px; height:42px" class="preloader"></span>-->
+      
               <div class="list-block facilities-list theme-green"></div>
             </div>
           </div>
@@ -449,10 +453,25 @@ $$('.popup-purchase').on('click', function () {
 
         myApp.alert('Purchased!', 'Tee Buddy');
 
+        //var tee_time =moment(teeTimesData[key].Time).format('MMMM D,YYYY hh:mm a');
+
+        /*
+        apiRequest('http://catz.cloudapp.net:4000/api/purchase?name'+facility.Name,{},'GET',function(result){ 
+            console.log('track purchase',result);
+        });
+*/
+
     });
 
 });
- 
+ /*
+ $$(document).ajaxStart(function(){ 
+        $$('.preloader').show(); 
+    });
+  $$(document).ajaxStop(function(){ 
+        $$('.preloader').hide(); 
+    });
+*/
 //facilities in area by geo - template
 var facilitiesTemplateSource = $$('#facilities-template').html();
 var facilitiesTemplate = Template7.compile(facilitiesTemplateSource);
@@ -503,7 +522,7 @@ var apiRequest = function(url,params,requestType,callback){
         
         var lat = '28.4815057'//'34.0204989';
         var long = '-81.4601184'//'-118.4117325';
-        var proximity = '50';
+        var proximity = '25';
         
         var url = 'https://sandbox.api.gnsvc.com/rest/channel/11329/facilities?q=geo-location&latitude='+lat+'&longitude='+long+'&proximity='+proximity+'&expand=FacilityDetail.Ratesets';
     
