@@ -32,7 +32,7 @@
         <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" language="javascript" src="js/moment.js"></script>
     </head>
-    <body class="theme-red">
+    <body class="theme-green">
  
 
 <!-- Statusbar overlay-->
@@ -56,7 +56,7 @@
         </div>
                 <div class="toolbar tabbar tabbar-labels">
             <div class="toolbar-inner">
-                <a href="index.html" class="tab-link active">
+                <a href="index.html" class="tab-link">
                     <i class="icon ion-flag"></i>
                     <span class="tabbar-label i18n" data-i18n="index.contacts">Courses</span>
                 </a>
@@ -135,16 +135,15 @@
 </script>
 <!-- Template: facility-->
 <script id="facility-template" type="text/template">
-     <div class="facility-image">
-        <img src="http://{{ThumbnailImagePath}}">
-    </div>
-    <div class="facility-info">
-        <h3>{{Name}}</h3>
-        {{Description}}
-    </div>
-    <div class="facility-links">
-        <a href="{{WebsiteAddress}}" target="_blank" class="external-link">Website</a> | 
-        <a id="directions" href="http://maps.google.com?daddr={{AddressString}}/@{{Latitude}},{{Longitude}},16Z" target="_blank" class="external-link">Get Directions</a>
+    <div class="row">
+        <div class="facility-image col-md-33" style="overflow:hidden;">
+            <img src="http://{{ThumbnailImagePath}}">
+        </div>
+        <div class="facility-info col-md-50" style="margin-left:1px;overflow:hidden;">
+            <h3>{{Name}}</h3>
+            
+        </div>
+        <div>{{Description}}</div>
     </div>
 </script>
 
@@ -413,7 +412,7 @@ $$('.popup-purchase').on('click', function () {
                         '<div align="right" class="col-50">'+
                             '<h3 style="margin:0;">$'+display_price+'</h3>'+
                             '<p>per player</p>'+
-                            '<a id="add-to-cart" href="#" class="button button-big active">Purchase</a>'+
+                            '<a href="#" class="button button-big active add-to-cart">Purchase</a>'+
                         '</div>'+
                         //'</form>'+
                     '</div> '+
@@ -444,7 +443,9 @@ $$('.popup-purchase').on('click', function () {
        
     });  
 
-    $$('#add-to-cart').on('click',function(){
+    $$(document).on('click','.add-to-cart',function(){
+
+        console.log('clicked purchase!');
 
         myApp.alert('Purchased!', 'Tee Buddy');
 
