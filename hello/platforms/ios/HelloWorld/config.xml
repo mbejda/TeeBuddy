@@ -46,4 +46,7 @@
     <feature name="HttpRequest">
         <param name="ios-package" value="HttpRequest" />
     </feature>
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
 </widget>

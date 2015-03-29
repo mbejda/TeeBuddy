@@ -46,10 +46,11 @@
 		7E7966E61810823500FA85AD /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DC1810823500FA85AD /* icon-small.png */; };
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
-		7B7EE0ED69CE42B1917202F4 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FCAD0DB8AC4B29AA6FCF2C /* HttpRequest.m */; };
-		11A8DE706E0A4D40A723343D /* R9HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7EEDE91E34610B1E37A2C /* R9HTTPRequest.m */; };
-		91FAAE43C7434B558EDF794E /* README in Resources */ = {isa = PBXBuildFile; fileRef = DAF91D88D8604082BBA90914 /* README */; };
-		53BB3E61F4CF40CF86C65BC9 /* BSD-LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0965CCC64419468E892690CA /* BSD-LICENSE */; };
+		D033DC53C9BE45DBBB2E1E17 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 304A7E40049A4938A553FB85 /* HttpRequest.m */; };
+		41BE3E0FBB654407A7A29C9E /* R9HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D8F05F596C48E4B86A295C /* R9HTTPRequest.m */; };
+		9963AAC49B5540A780D53C18 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4F08C113F7BD469EA72CCBF2 /* README */; };
+		339AB983004E4F3E86488051 /* BSD-LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 961BEC2C65E44DF8BBF4D956 /* BSD-LICENSE */; };
+		04B1B4FDEF814AD1A19FF8A5 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 613C457133BC4D9097A566CA /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,12 +153,14 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = HelloWorld/config.xml; sourceTree = "<group>"; };
 		FB829B02D32B4C8CB246B9DD /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = com.synconset.cordovaHTTP/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		FC11838018E144DCB77223DC /* CDVLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = org.apache.cordova.console/CDVLogger.m; sourceTree = "<group>"; };
-		91FCAD0DB8AC4B29AA6FCF2C /* HttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "HttpRequest.m"; path = "plugin.http.request/HttpRequest/HttpRequest.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		83A7EEDE91E34610B1E37A2C /* R9HTTPRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "R9HTTPRequest.m"; path = "plugin.http.request/HttpRequest/R9HTTPRequest/R9HTTPRequest.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		DAF91D88D8604082BBA90914 /* README */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "README"; path = "plugin.http.request/README"; sourceTree = "<group>"; fileEncoding = 4; };
-		0965CCC64419468E892690CA /* BSD-LICENSE */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "BSD-LICENSE"; path = "plugin.http.request/HttpRequest/R9HTTPRequest/BSD-LICENSE"; sourceTree = "<group>"; fileEncoding = 4; };
-		FC40C5B2CDD34EAC84F7DAE6 /* HttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HttpRequest.h"; path = "plugin.http.request/HttpRequest/HttpRequest.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		226BF7EFD3B44BC98DCDBEEC /* R9HTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "R9HTTPRequest.h"; path = "plugin.http.request/HttpRequest/R9HTTPRequest/R9HTTPRequest.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		304A7E40049A4938A553FB85 /* HttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "HttpRequest.m"; path = "plugin.http.request/HttpRequest/HttpRequest.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		12D8F05F596C48E4B86A295C /* R9HTTPRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "R9HTTPRequest.m"; path = "plugin.http.request/HttpRequest/R9HTTPRequest/R9HTTPRequest.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		4F08C113F7BD469EA72CCBF2 /* README */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "README"; path = "plugin.http.request/README"; sourceTree = "<group>"; fileEncoding = 4; };
+		961BEC2C65E44DF8BBF4D956 /* BSD-LICENSE */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "BSD-LICENSE"; path = "plugin.http.request/HttpRequest/R9HTTPRequest/BSD-LICENSE"; sourceTree = "<group>"; fileEncoding = 4; };
+		D273FC3C09B94CED935E42CD /* HttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HttpRequest.h"; path = "plugin.http.request/HttpRequest/HttpRequest.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		B025F6DDFC3C4643A13F5D00 /* R9HTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "R9HTTPRequest.h"; path = "plugin.http.request/HttpRequest/R9HTTPRequest/R9HTTPRequest.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		613C457133BC4D9097A566CA /* CDVInAppBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVInAppBrowser.m"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		C0E50955890C4ECBBC452333 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVInAppBrowser.h"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,12 +301,14 @@
 				88AEE5BA80F44081B919369E /* AFURLSessionManager.h */,
 				D9A68D520B924E1590BCB8AC /* CDVLocation.m */,
 				0C25260055B648318210DB66 /* CDVLocation.h */,
-				91FCAD0DB8AC4B29AA6FCF2C /* HttpRequest.m */,
-				83A7EEDE91E34610B1E37A2C /* R9HTTPRequest.m */,
-				DAF91D88D8604082BBA90914 /* README */,
-				0965CCC64419468E892690CA /* BSD-LICENSE */,
-				FC40C5B2CDD34EAC84F7DAE6 /* HttpRequest.h */,
-				226BF7EFD3B44BC98DCDBEEC /* R9HTTPRequest.h */,
+				304A7E40049A4938A553FB85 /* HttpRequest.m */,
+				12D8F05F596C48E4B86A295C /* R9HTTPRequest.m */,
+				4F08C113F7BD469EA72CCBF2 /* README */,
+				961BEC2C65E44DF8BBF4D956 /* BSD-LICENSE */,
+				D273FC3C09B94CED935E42CD /* HttpRequest.h */,
+				B025F6DDFC3C4643A13F5D00 /* R9HTTPRequest.h */,
+				613C457133BC4D9097A566CA /* CDVInAppBrowser.m */,
+				C0E50955890C4ECBBC452333 /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = HelloWorld/Plugins;
@@ -492,10 +497,11 @@
 				42CA4B4A41504512A3B6843B /* RPKCDVPlugin.m in Sources */,
 				664441D8A5D04F8EA4C09618 /* CDVLogger.m in Sources */,
 				773CA1BCC238436A9BE49D96 /* CDVLocation.m in Sources */,
-				7B7EE0ED69CE42B1917202F4 /* HttpRequest.m in Sources */,
-				11A8DE706E0A4D40A723343D /* R9HTTPRequest.m in Sources */,
-				91FAAE43C7434B558EDF794E /* README in Resources */,
-				53BB3E61F4CF40CF86C65BC9 /* BSD-LICENSE in Resources */,
+				D033DC53C9BE45DBBB2E1E17 /* HttpRequest.m in Sources */,
+				41BE3E0FBB654407A7A29C9E /* R9HTTPRequest.m in Sources */,
+				9963AAC49B5540A780D53C18 /* README in Resources */,
+				339AB983004E4F3E86488051 /* BSD-LICENSE in Resources */,
+				04B1B4FDEF814AD1A19FF8A5 /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

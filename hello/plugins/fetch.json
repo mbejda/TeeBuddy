@@ -19,5 +19,18 @@
             "type": "registry",
             "id": "org.apache.cordova.geolocation"
         }
+    },
+    "plugin.http.request": {
+        "source": {
+            "type": "registry",
+            "id": "plugin.http.request"
+        }
+    },
+    "org.apache.cordova.inappbrowser": {
+        "source": {
+            "type": "git",
+            "url": "https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git",
+            "subdir": "."
+        }
     }
 }

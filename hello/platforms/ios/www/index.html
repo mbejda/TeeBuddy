@@ -23,12 +23,14 @@
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-                <link rel="stylesheet" type="text/css" href="css/framework7.css" />
-
+        
         <meta name="msapplication-tap-highlight" content="no" />
         <script src="http://localhost:5000/target/target-script-min.js#anonymous"></script>
-        <title>Hello World</title>
+        <title>Tee Buddy</title>
+        <link rel="stylesheet" type="text/css" href="css/framework7.css" />
+        <link href="css/app.css" rel="stylesheet" type="text/css" />
+        <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" language="javascript" src="js/moment.js"></script>
     </head>
     <body class="theme-red">
  
@@ -48,9 +50,24 @@
         <div class="pages">
           <div data-page="index" class="page">
             <div class="page-content">
-              <div class="list-block todo-items-list theme-pink"></div>
+              <div class="list-block facilities-list theme-green"></div>
             </div>
           </div>
+        </div>
+                <div class="toolbar tabbar tabbar-labels">
+            <div class="toolbar-inner">
+                <a href="index.html" class="tab-link active">
+                    <i class="icon ios7-chatbubble-outline"></i>
+                    <span class="tabbar-label i18n" data-i18n="index.contacts">Courses</span>
+                </a>
+
+                <a href="settings.html" class="tab-link">
+                    <i class="icon ios7-gear-outline">
+                        <!-- <span class="badge badge-red">4</span> -->
+                    </i>
+                    <span class="tabbar-label i18n" data-i18n="index.setting">Settings</span>
+                </a>
+            </div>
         </div>
       </div>
     </div>
@@ -67,6 +84,7 @@
         <div class="pages">
           <div class="page">
             <div class="page-content">
+
               <div class="list-block">
                 <ul>
                   <li>
@@ -95,58 +113,78 @@
         </div>
       </div>
     </div>
-    <!-- Template-->
-    <script id="todo-item-template" type="text/template">
-      <ul>{{#each this}}
 
-<li>
+<!-- Template: index -->
+<script id="facilities-template" type="text/template">
+    <div class="list-block">
+    <ul>{{#each this}}
+    <li><a href="tee-times.html?id={{ID}}" class="item-link">
     <div class="item-content">
-
-
         <div class="item-media">
-            <i class="icon my-icon"></i>
+            <img src="http://{{ThumbnailImagePath}}" alt="{{Name}}" width=44 />
         </div>
         <div class="item-inner">
-            <div class="item-title">
-               <div class="item-title" href="">{{name}}</div>
+            <div class="item-title-row">
+                <div class="item-title">{{Name}}</div>
+            </div>
+            <div class="item-subtitle">{{teeTimeCount}}</div>
+        </div>
+    </div></a></li>{{/each}}
+    </ul>
+    </div>
+</script>
+<!-- Template: facility-->
+<script id="facility-template" type="text/template">
+     <div class="facility-image">
+        <img src="http://{{ThumbnailImagePath}}">
+    </div>
+    <div class="facility-info">
+        <h3>{{Name}}</h3>
+        {{Description}}
+    </div>
+    <div class="facility-links">
+        <a href="{{WebsiteAddress}}" target="_blank" class="external-link">Website</a> | 
+        <a id="directions" href="http://maps.google.com?daddr={{AddressString}}/@{{Latitude}},{{Longitude}},16Z" target="_blank" class="external-link">Get Directions</a>
+    </div>
+</script>
 
-            </div>
-            <div class="item-after">
-              <a href="tee.html?id={{id}}" data-page="tee" class="button active">view</a>
-            </div>
+<!-- Template: tee-times -->
+<script id="tee-times-template" type="text/template">
+    <div class="list-block">
+        <div class="list-group">
+            <h3>Tee Times Ending Soon!</h3>
+            <ul>{{#each this}}
+                <li>
+                    <a href="#" class="item-link item-content external">
+                        <div class="item-media"><i class="icon ion-ios-clock-outline"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title datetime">{{Time}}</div>
+                        </div>
+                    </a>
+                </li>{{/each}}
+            </ul>
         </div>
     </div>
-</li>
+</script>
 
-
-
-
-
-
-
-
-        {{/each}}
-      </ul>
-    </script>
-
-
-
-
-
-
-
-
-            <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/framework7.js"></script>
-        <script type="text/javascript">
-            
-
-
-
-
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/framework7.js"></script>
+<script type="text/javascript">
+        
 // Initialize your app
 var myApp = new Framework7({
-    modalTitle: 'Tee-Buddy'
+    modalTitle: 'Tee-Buddy',
+    template7Pages: true, //enable Template7 rendering for pages
+    /*
+     template7Data: {
+        // This context will applied for page/template with "about.html" URL
+        'url:tee-times.html': {
+            name: 'Test',
+            desc: 'this is a desc',
+            img: ''
+        }
+    }
+ */
 });
 
 // Export selectors engine
@@ -159,6 +197,20 @@ var mainView = myApp.addView('.view-main', {
 });
 
 var todoData = localStorage.td7Data ? JSON.parse(localStorage.td7Data) : [];
+
+
+
+$$('.external-link').on('click',function(){
+    console.log('asdasdas');
+    /*
+    var targetURL = $$(this).attr('href');
+    console.log('targetURL',targetURL);
+    //window.open(targetURL,'_system');
+    var ref = window.open(encodeURI(targetURL), '_blank', 'location=yes');
+    */
+});
+
+
 
 $$('.popup').on('open', function () {
     $$('body').addClass('with-popup');
@@ -178,10 +230,6 @@ $$('.popup .color').on('click', function () {
 });
 
 
-
-
-
-
 // Add Task
 $$('.popup .add-task').on('click', function () {
     var title = $$('.popup input[name="title"]').val().trim();
@@ -199,56 +247,10 @@ $$('.popup .add-task').on('click', function () {
     buildTodoListHtml();
     myApp.closeModal('.popup');
 
-
-
-
-
-
-
 });
 
-// Build Todo HTML using Template7 template engine
-var todoItemTemplateSource = $$('#todo-item-template').html();
-var todoItemTemplate = Template7.compile(todoItemTemplateSource);
-function buildTodoListHtml() {
-
-    var list = [
-{
-        name: 'Orlando Golf Course',
-        location: 'Orlando',
-        id : 001,
-
-    },
-    {
-        name: 'Winter Park Golf Course',
-        location: 'Winter Park',
-        id : 002
-
-    },
-    {
-        name: 'Sanford Golf Course',
-        location: 'sanford',
-        id : 003
-    }
-    ,{
-        name: 'Yellow Golf Course',
-        location: 'yellow',
-        id : 004
-
-    }
-    ];
-todoData = list;
-
-
-
-    var renderedList = todoItemTemplate(todoData);
-    $$('.todo-items-list').html(renderedList);
-}
-// Build HTML on App load
-buildTodoListHtml();
-
 // Mark checked
-$$('.todo-items-list').on('change', 'input', function () {
+$$('.facilities-list').on('change', 'input', function () {
     var input = $$(this);
     var item = input.parents('li');
     var checked = input[0].checked;
@@ -260,7 +262,7 @@ $$('.todo-items-list').on('change', 'input', function () {
 });
 
 // Delete item
-$$('.todo-items-list').on('delete', '.swipeout', function () {
+$$('.facilities-list').on('delete', '.swipeout', function () {
     var id = $$(this).attr('data-id') * 1;
     var index;
     for (var i = 0; i < todoData.length; i++) {
@@ -288,85 +290,137 @@ window.addEventListener('load', function (e) {
     }, false);
 }, false);
 
+var facilities = {};
 
-
-myApp.onPageInit('tee', function (page) {
+myApp.onPageInit('tee-times', function (page) {
   
     var id = page.query.id;
-  console.log('facility ID ',page);
 
-  // "page" variable contains all required information about loaded and initialized page 
-})
+    console.log('facility ID ',page);
+
+    for(key in facilities){
+        //get facility clicked
+        if(id == facilities[key].ID){
+            var facility = facilities[key];
+    
+            console.log('you clicked this facility',facility);
+             //console.log('PAGE TEMPLATE DATA:');
+            // console.log(myApp.template7Data['url:tee-times.html']);
+             var teeTimesData = facility.Ratesets.Value;
+             console.log('teeTimesData:',teeTimesData);
+
+             /*
+             myApp.template7Data['url:tee-times.html'].name = facility.Name;
+             myApp.template7Data['url:tee-times.html'].desc = facility.Description;
+             myApp.template7Data['url:tee-times.html'].img = facility.ThumbnailImagePath;
+            */
+            /*
+            mainView.router.load({
+                url: 'tee-times.html',
+                context: {
+                  name: facility.Name,
+                  desc: facility.Description,
+                  img: facility.ThumbnailImagePath
+                }
+            });
+*/
+            var facilityTemplateSource = $$('#facility-template').html();
+            var teeTimesTemplateSource = $$('#tee-times-template').html();
+
+            var facilityTemplate = Template7.compile(facilityTemplateSource);
+            var teeTimesTemplate = Template7.compile(teeTimesTemplateSource);
+
+            var facilityInfo = facilityTemplate(facility);
+            var teeTimesList = teeTimesTemplate(teeTimesData);
+
+            console.log('teeTimesList',teeTimesList);
+            $$('.facility-info').html(facilityInfo);
+            $$('.tee-times').html(teeTimesList);
+
+            
+
+            //track views with azure cloud
+            apiRequest(
+                'http://catz.cloudapp.net:4000/api/course?name='+facility.Name,
+                {},
+                'GET',
+                function(result){
+                    console.log('tracker result',result);
+                }
+            );
+            
+            
+            break;
+        }
+    }
+    // "page" variable contains all required information about loaded and initialized page 
+$$('.external-link').on('click',function(){
+    console.log('asdasdas');
+    
+    var targetURL = $$(this).attr('href');
+    console.log('targetURL',targetURL);
+    //window.open(targetURL,'_system');
+    var ref = window.open(encodeURI(targetURL), '_blank', 'location=yes');
+    
+});
+$$('.tee-times .datetime').each(function(index,value){
+
+    var tee_datetime = $$(this).html();
+//moment(tee_datetime).fromNow(); 
+var a = moment(tee_datetime);
+var b = moment();
+console.log('a',a);
+console.log('b',b);
+console.log('Expires in '+a.diff(b, 'hours')); // 1
+
+$$(this).html(a.format('MMMM D,YYYY hh:mm')+'<br/> <em class="small">Expires in '+a.diff(b, 'hours')+' hour(s)</em>');
+
+});
+
+
+});
  
+//facilities in area by geo - template
+var facilitiesTemplateSource = $$('#facilities-template').html();
+var facilitiesTemplate = Template7.compile(facilitiesTemplateSource);
 
 var api = {
     user:'Hackathon_Development',
     pass:'6YBkHF86ut7946pDwZhp'
 }
 
-var apiRequest = function(url,params,requestType){
+var apiRequest = function(url,params,requestType,callback){
         
 
-
-
-
-
-
-        return
         var _self = this;
         
-        url = 'https://sandbox.api.gnsvc.com/'+url;
-        params = (undefined === params) ? {} : params;
-        requestType = (undefined === requestType) ? 'post' : requestType;
+        //url = 'https://sandbox.api.gnsvc.com/rest/'+url;
+        //params = (undefined === params) ? {} : params;
+        //requestType = (undefined === requestType) ? 'POST' : requestType;
         
         var headers = {
             'UserName': api.user,
             'Password': api.pass,
             'Accept-Encoding': 'gzip, deflate',
         }
-        
-        switch(requestType){
-            
-            case 'post':
-            
-                cordovaHTTP.post(url, params, headers, function(response) { //success
-                    // prints 200
-                    console.log('status: '+response.status);
-                    console.log(response);
-                    /*
-                    try {
-                        response.data = JSON.parse(response.data);
-                        // prints test
-                        console.log(response.data);
-                    } catch(e) {
-                        console.error("JSON parsing error");
-                    }
-                    */
-                }, function(response) { //failure
-                    // prints 403
-                    console.log('error status: '+response.status);
-                         
-                    //prints Permission denied
-                    console.log('erroe msg: '+response.error);
-                });
 
-                break;
-            
-            case 'get':
-            
-                cordovaHTTP.get(url,params,headers, function(response) {
-                
-                    console.log(response);
-                
-                }, function(response) {
-                
-                    console.error(response);
-                
-                });
-                
-                break;
-        }
-        
+        $$.ajax({
+            url: url,
+            headers: headers,
+            method: requestType,
+            dataType: 'json',
+            success: function(response){
+                //console.log('test response:');
+                //console.log(response);
+
+                callback(response);
+            },
+            error: function(jqXHR){
+                console.log('error:');
+                console.log(jqXHR);
+                callback(false);
+            }
+        });
         
 
     }
@@ -378,30 +432,72 @@ var apiRequest = function(url,params,requestType){
         var long = '-118.4117325';
         var proximity = '10';
         
-        var url = 'channel/11329/facilities?q=geo-location&latitude='+lat+'&longitude='+long+'&proximity='+proximity+'&expand=FacilityDetail.Ratesets';
+        var url = 'https://sandbox.api.gnsvc.com/rest/channel/11329/facilities?q=geo-location&latitude='+lat+'&longitude='+long+'&proximity='+proximity+'&expand=FacilityDetail.Ratesets';
+    
+
+        apiRequest(url,{},'GET',function(data){
+
+            facilities = data;
+            /*
+            for(key in facilities){
+                var facility_id = facilities[key].ID;
+
+                console.log('facility id: ' + facility_id);
+
+                var url = 'channel/11329/facilities/'+facility_id+'/reviews?take=1&skip=0';
+
+                 apiRequest(url,{},'GET',function(review){
+                    
+                   
+                   facilities[key].review = review;
+
+                   console.log('facility review:');
+                   console.log(facilities[key].review);
+
+                    console.log('facilities')
+                    console.log(facilities);
+
+                    var renderedList = todoItemTemplate(facilities);
+                    $$('.todo-items-list').html(renderedList);
+
+                });
+            }
+            */
+
+
+            for(key in facilities){
+               
+                facilities[key].teeTimeCount = facilities[key].Ratesets.Value.length;
+
+                //set address into string for directions
+                facilities[key].AddressString = facilities[key].Address.Line1;
+
+                if(facilities[key].Address.Line2 != '')
+                    facilities[key].AddressString += '+'+facilities[key].Address.Line2;
+
+                facilities[key].AddressString += '+'+facilities[key].Address.City+'+'
+                +facilities[key].Address.StateProvinceCode+'+'
+                +facilities[key].Address.PostalCode+'+'
+                +facilities[key].Address.Country;
+                
+                facilities[key].AddressString = facilities[key].AddressString.replace(' ','+');
+            }
         
-        apiRequest(url,{},'get');
+
+            console.log('facilities')
+            console.log(facilities);
+
+            var facilitiesList = facilitiesTemplate(facilities);
+            $$('.facilities-list').html(facilitiesList);
+            
+        });
+
+
+
+
     }
 
-
-setTimeout(function(){
-    console.log('NOW')
-    var httpReq = new plugin.HttpRequest();
-httpReq.get("https://samplechat.firebaseio-demo.com/users/jack/name.json", function(status, data) {
-  console.log(status)
-  console.log(data)
-});
-
-},1000)
-
-
-
-
-
-
-
-//    getTeeTimesByGeo();
-
-        </script>
+    getTeeTimesByGeo();
+</script>
     </body>
 </html>
