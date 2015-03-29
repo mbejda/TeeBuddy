@@ -201,15 +201,6 @@ var todoData = localStorage.td7Data ? JSON.parse(localStorage.td7Data) : [];
 
 
 
-$$('.external-link').on('click',function(){
-    console.log('asdasdas');
-    /*
-    var targetURL = $$(this).attr('href');
-    console.log('targetURL',targetURL);
-    //window.open(targetURL,'_system');
-    var ref = window.open(encodeURI(targetURL), '_blank', 'location=yes');
-    */
-});
 
 
 
@@ -361,7 +352,7 @@ $$('.external-link').on('click',function(){
     var targetURL = $$(this).attr('href');
     console.log('targetURL',targetURL);
     //window.open(targetURL,'_system');
-    var ref = window.open(encodeURI(targetURL), '_system', 'location=yes');
+    var ref = window.open(encodeURI(targetURL), '_system');
     
 });
 $$('.tee-times .datetime').each(function(index,value){
